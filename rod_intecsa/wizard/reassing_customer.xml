@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="form_reassing_customer_id">
+            <field name="name">reassing.customer.form</field>
+            <field name="model">reassign.customers</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de asignacion">
+                    <group>
+                        <group string="Clientes">
+                            <field name="customer_class_a" readonly="1"/>
+                            <field name="customer_class_b1" readonly="1"/>
+                            <field name="customer_class_b2" readonly="1"/>
+                            <field name="customer_class_b3" readonly="1"/>
+                        </group>
+                        <group string="Vendedores">
+                            <field name="seller_class_a" readonly="1"/>
+                            <field name="seller_class_b1" readonly="1"/>
+                            <field name="seller_class_b2" readonly="1"/>
+                            <field name="seller_class_b3" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Clientes sin movimiento">
+                            <field name="no_movement"/>
+                            <field name="customer_no_movement"/>
+                        </group>
+                    </group>
+
+                    <footer>
+                        <button name="assing" string="Confirmar" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

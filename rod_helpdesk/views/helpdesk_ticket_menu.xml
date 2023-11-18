@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <!-- Actions -->
+<!--    <record id="helpdesk_ticket_dashboard_action" model="ir.actions.act_window">-->
+<!--        <field name="name">Dashboard</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">helpdesk.ticket.team</field>-->
+<!--        <field name="view_mode">kanban,tree,form,pivot</field>-->
+<!--    </record>-->
+    <!-- Menus -->
+    <menuitem
+            id="helpdesk_ticket_rod_accesory_feature_menu"
+            name="Caracteristicas y Accesorios"
+            parent="helpdesk_mgmt.helpdesk_ticket_config_main_menu"
+            action="action_feature_type"
+            sequence="60"
+    />
+    <menuitem
+            id="helpdesk_ticket_rod_accesory_feature_menu"
+            name="Caracteristicas y Accesorios"
+            parent="helpdesk_mgmt.helpdesk_ticket_config_main_menu"
+            action="action_feature_type"
+            sequence="60"
+    />
+
+</odoo>

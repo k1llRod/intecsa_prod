@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="helpdesk_ticket_delivery_note_id">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page" style="min-height: 100%;">
+                            <div class="oe_structure"/>
+                            <div class="row mt32 mb32">
+
+                            </div>
+                            <center>
+                                <h2>
+                                    <span t-field="o.number"/>
+                                </h2>
+                            </center>
+                            <center>
+                                <h3>
+                                    <span t-field="o.name"/>
+                                </h3>
+                            </center>
+                            <div>
+                                <hr/>
+                                <table class="table table-striped">
+                                    <tr>
+                                        <td><strong>Usuario asignado:</strong></td>
+                                        <td><span t-field="o.user_id"/></td>
+                                        <td><strong>Cliente: </strong></td>
+                                        <td><span t-field="o.partner_id"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Creado en:</strong></td>
+                                        <td><span t-field="o.create_date"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <hr/>
+                            <div>
+                                <h3>Detalles</h3>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Codigo</th>
+                                            <th>Descripcion de las caracteristicas</th>
+                                            <th>Tipo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="o.accesory_features" t-as="a">
+                                            <tr>
+                                                <td><span t-field="a.name"/></td>
+                                                <td><span t-field="a.description"/></td>
+                                                <td><span t-field="a.feature_type"/></td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+
+                                </table>
+                                <t t-foreach="o.accesory_features" t-as="a">
+
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
