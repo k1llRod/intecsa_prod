@@ -6,7 +6,21 @@
             <field name="inherit_id" ref="helpdesk_mgmt.ticket_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//group[@name='main']" position="after">
-                    <field name="accesory_features"/>
+                    <group>
+                        <field name="accesory_features"/>
+                    </group>
+                    <group>
+                        <field name="accesories_ids" />
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='channel_id']" position="after">
+                    <field name="type_contract"/>
+                    <field name="equipment_conditions"/>
+<!--                    <field name="accesories_ids" widget="many2many_tags"/>-->
+                    <field name="ribon" invisible="1"/>
+                </xpath>
+                <xpath expr="sheet/widget[1]" position="after">
+                    <widget name="web_ribbon" title="Hecho" attrs="{'invisible': [('ribon','!=',True)]}"/>
                 </xpath>
             </field>
         </record>

@@ -1,3 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_feature_type,feature_type,model_feature_type,base.group_user,1,1,1,1
 access_accesory_features,accesory_features,model_accesory_features,base.group_user,1,1,1,1
+access_machine,machine,model_machine,base.group_user,1,1,1,1
+access_brand,brand,model_brand,base.group_user,1,1,1,1
+access_model,model_machine,model_model_machine,base.group_user,1,1,1,1
+access_accesories,accesories,model_accesories,base.group_user,1,1,1,1
+access_accesory_list,accesory_list,model_accesory_list,base.group_user,1,1,1,1

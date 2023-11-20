@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <!-- Vista Árbol de Modelo accesory list -->
+        <record model="ir.ui.view" id="accesory_list_tree_id">
+            <field name="name">accesory.list.tree</field>
+            <field name="model">accesory.list</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="imagen" widget="image" options='{"preview_image": true}'/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista Formulario payroll payments -->
+
+        <record model="ir.ui.view" id="accesory_list_form_id">
+            <field name="name">accesory.list.form</field>
+            <field name="model">accesory.list</field>
+            <field name="arch" type="xml">
+                <form string="Caracteristicas" class="oe_left oe_edit_only oe_form_required">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" string="Nombre"/>
+                            </h1>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="imagen"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Accion para visualizar payroll payments -->
+
+        <record id="action_accesory_list" model="ir.actions.act_window">
+            <field name="name">Lista de accesorios</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">accesory.list</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

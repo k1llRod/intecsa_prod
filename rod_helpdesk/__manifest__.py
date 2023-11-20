@@ -26,8 +26,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/accesory_features.xml',
-        'views/feature_type.xml',
-        'views/helpdesk_ticket_menu.xml',
+        'views/accesory_list.xml',
+        'views/helpdesk_ticket_stage.xml',
         'views/helpdesk_ticket.xml',
         'report/report.xml',
         'report/report_helpdesk_delivery_note.xml',
