@@ -48,27 +48,27 @@
                                 </div>
                             </div>
                             <div class="main">
-                                <table>
+                                <table class="table table-bordered">
                                     <tr>
-                                        <td>EMPRESA SOLICITANTE</td>
-                                        <td><t t-value="o.partner_id" /></td>
+                                        <td><font>EMPRESA SOLICITANTE</font></td>
+                                        <td><span t-field="o.partner_id"/></td>
                                     </tr>
                                     <tr>
-                                        <td>FECHA DE INICIO</td>
-                                        <td></td>
+                                        <td><font>FECHA DE INICIO</font></td>
+                                        <td><span t-field="o.create_date"/></td>
                                         <td>FECHA DE FINALIZACION</td>
-                                        <td></td>
+                                        <td><span t-field="o.closed_date"/></td>
                                     </tr>
                                     <tr>
                                         <td>TIPO DE CONTRATO</td>
-                                        <td></td>
+                                        <td><span t-field="o.type_contract"/></td>
                                         <td>GARANTIA</td>
                                         <td></td>
                                     </tr>
                                 </table>
                                 <br/>
                                 <center><h2>DATOS DEL EQUIPO</h2></center>
-                                <table>
+                                <table class="table table-bordered">
                                     <tr>
                                         <td>
                                             EQUIPO
@@ -83,8 +83,69 @@
                                             SERIE
                                         </td>
                                     </tr>
-
+                                    <t t-foreach="o.accesory_features" t-as="p">
+                                        <tr>
+                                            <td>
+                                                <span t-field="p.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="p.brand_id"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="p.model_id"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="p.serial_number"/>
+                                            </td>
+                                        </tr>
+                                    </t>
                                 </table>
+
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td>
+                                            CONDICIONES DEL EQUIPO
+                                        </td>
+                                        <td>
+                                            <span t-field="o.description"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            ACCESORIOS
+                                        </td>
+                                        <td>
+                                            <t t-foreach="o.accesories_ids" t-as="q">
+                                                <span t-field="q.name" />
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            DESCRIPCION DE LA FALLA
+                                        </td>
+                                        <td>
+<!--                                            <span t-field="o.description"/>-->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            TRABAJO REALIZADO
+                                        </td>
+                                        <td>
+                                            <span t-field="o.description"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            OBSERVACIONES O RECOMENDACIONES
+                                        </td>
+                                        <td>
+                                            <span t-field="o.remarks"/>
+                                        </td>
+                                    </tr>
+                                </table>
+
                             </div>
                             <div class="footer">
                                 <h2>Pie de pagina</h2>

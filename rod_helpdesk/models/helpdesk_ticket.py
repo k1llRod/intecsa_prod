@@ -8,3 +8,4 @@ class HelpdeskTicket(models.Model):
     accesories_ids = fields.One2many('accesory.list', 'ticket_id', string='Accesorios')
     type_contract = fields.Selection([('contrato', 'Contrato'), ('eventual', 'Eventual')], string='Tipo de contrato')
     ribon = fields.Boolean(string='Cinta', related='stage_id.ribon')
+    remarks = fields.Text(string='Observaciones')

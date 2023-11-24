@@ -41,7 +41,7 @@
                             <div class="col-4 text-center" style="font-style:arial;font-size:10px;padding-top:10px;">
                                 <span t-field="company.partner_id" style="font-size: 12px;"/>
                                 <br/>
-                                <span>UBICACION EN SANTA CRUZ</span>
+                                <span>C. LUIS ARCE, ESQ.COMBATIENTE BELLA FLOR</span>
                                 <br/>
                                 <span>PISO</span>
                                 <br/>
