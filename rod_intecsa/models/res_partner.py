@@ -51,3 +51,16 @@ class ResPartner(models.Model):
             'target': 'new',
             'context': context,
         }
+
+    @api.model
+    def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
+        if not args:
+            args = []
+        if name:
+            positive_operators6 = ['=', 'ilike', '=ilike', 'like', '=like']
+            partners_ids = []
+            args = ['|', ('name', operator, name), ('a_area', operator, name)] + args
+            partners_ids = self._search(args, limit=limit, access_rights_uid=name_get_uid)
+        else:
+            partners_ids = self._search(args, limit=limit, access_rights_uid=name_get_uid)
+        return partners_ids

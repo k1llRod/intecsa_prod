@@ -5,4 +5,3 @@ class StockMove(models.Model):
 
     cost_product = fields.Float(string='Costo del producto')
     # total_price_unit = fields.Float(string='Total', compute='_compute_total_price_unit', store=True)
-    

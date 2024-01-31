@@ -8,6 +8,9 @@
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="is_expired"/>
                 </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="a_area"/>
+                </xpath>
             </field>
         </record>
 <!--        <record model="ir.ui.view" id="view_res_partner_filter_inh">-->
