@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="stock_move_tree_inh">
+            <field name="name">stock.inventory.line.tree.inh</field>
+            <field name="model">stock.inventory.line</field>
+            <field name="inherit_id" ref="stock.stock_inventory_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='prod_lot_id']" position="after">
+                    <field name="cost_product"/>
+<!--                    <field name="total_price_unit"/>-->
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

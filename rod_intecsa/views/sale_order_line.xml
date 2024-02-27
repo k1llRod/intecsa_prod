@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sale_order_line_tree_inh">
+            <field name="name">sale.order.line.tree.inh</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale.view_order_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='currency_id']" position="before">
+                    <field name="sum_cost"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

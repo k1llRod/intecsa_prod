@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_seller_commission">
+        <field name="name">Seller commission</field>
+        <field name="model">seller.commission</field>
+        <field name="arch" type="xml">
+            <tree
+                    string="Settlements"
+                    decoration-muted="state == 'invoiced'"
+                    decoration-danger="state == 'cancel'"
+                    create="false"
+            >
+                <field name="agent_id"/>
+                <field name="sale_id"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="total" sum="Settled total"/>
+                <field name="state"/>
+            </tree>
+        </field>
+
+    </record>
+    <record model="ir.actions.act_window" id="action_seller_commission">
+        <field name="name">Liquidacion comisiones</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">seller.commission</field>
+        <field name="binding_view_types">tree,form</field>
+    </record>
+    <menuitem
+            name="Liquidacion comisiones"
+            id="menu_seller_commission"
+            parent="sale.sale_menu_root"
+            sequence="100"
+    />
+
+</odoo>

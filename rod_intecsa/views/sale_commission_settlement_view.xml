@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_settlement_tree_inh">
+        <field name="name">settlements.tree.inh</field>
+        <field name="model">sale.commission.settlement</field>
+        <field name="inherit_id" ref="sale_commission.view_settlement_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='agent_id']" position="after">
+                <field name="sale_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
