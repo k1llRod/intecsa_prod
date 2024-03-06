@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="commission_payment_tree_id">
+        <field name="name">commission.payment.tree</field>
+        <field name="model">commission.payment</field>
+        <field name="arch" type="xml">
+            <tree string="Comisiones"
+                editable="bottom"
+                create="false">
+<!--                <header>-->
+<!--                    <button name="action_confirm" string="Pagar comision" class="oe_highlight" type="object"-->
+<!--                            />-->
+<!--                </header>-->
+                <field name="name"/>
+                <field name="user_id"/>
+                <field name="total_commission"/>
+
+            </tree>
+        </field>
+
+    </record>
+    <record model="ir.actions.act_window" id="action_commission_payment">
+        <field name="name">Liquidacion comisiones</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">commission.payment</field>
+        <field name="binding_view_types">tree,form</field>
+    </record>
+
+
+</odoo>

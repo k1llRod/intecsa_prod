@@ -12,5 +12,6 @@ from . import stock_inventory_line
 from . import sale_order_line
 from . import seller_commission
 from . import account_move
+from . import commission_payment
 # from . import account_payment_register
 # from . import settlement

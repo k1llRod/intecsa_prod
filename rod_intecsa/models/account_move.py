@@ -5,6 +5,7 @@ class AccountMove(models.Model):
 
     def action_register_payment(self):
         a = 1
+        sale_id = self.env['sale.order'].search([('name','=',self.invoice_origin)])
         ''' Open the account.payment.register wizard to pay the selected journal entries.
         :return: An action opening the account.payment.register wizard.
         '''
@@ -13,9 +14,10 @@ class AccountMove(models.Model):
             'res_model': 'account.payment.register',
             'view_mode': 'form',
             'context': {
+                'total_commission': self.commission_total,
+                'sale_id': sale_id,
                 'active_model': 'account.move',
                 'active_ids': self.ids,
-                'total_commission': self.commission_total,
             },
             'target': 'new',
             'type': 'ir.actions.act_window',

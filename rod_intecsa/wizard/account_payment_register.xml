@@ -7,6 +7,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='payment_date']" position="before">
                     <field name="total_commission" />
+                    <field name="sale_id" readonly="1"/>
                 </xpath>
             </field>
         </record>
