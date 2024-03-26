@@ -6,20 +6,24 @@
         <field name="arch" type="xml">
             <tree
                 string="Settlements"
-                decoration-muted="state == 'draft'"
-                decoration-danger="state == 'done'"
+                decoration-muted="state == 'done'"
                 editable="bottom"
                 create="false">
                 <header>
                     <button name="action_confirm" string="Pagar comision" class="oe_highlight" type="object"
                             />
                 </header>
-                <field name="agent_id"/>
-                <field name="sale_id"/>
+                <field name="name" readonly="1"/>
+                <field name="agent_id" readonly="1"/>
+                <field name="sale_id" readonly="1"/>
                 <field name="date_from"/>
                 <field name="date_to"/>
+                <field name="amount_untaxed"/>
+                <field name="amount_tax"/>
+                <field name="amount_total"/>
+                <field name="discount_total"/>
                 <field name="total" sum="Settled total"/>
-                <field name="state"/>
+                <field name="state" decoration-success="state == 'done'" decoration-info="state == 'draft'" widget="badge"/>
             </tree>
         </field>
 
@@ -46,7 +50,7 @@
             id="menu_seller_commission_form"
             name="Pago de comisiones"
             parent="rod_intecsa.menu_seller_commission"
-            action="action_commission_payment"
+            action="action_commission_payment_id"
             sequence="2"/>
 <!--    <menuitem-->
 <!--            id="menu_commission_payment_form"-->

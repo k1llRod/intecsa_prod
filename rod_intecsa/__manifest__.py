@@ -24,7 +24,9 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'data/custom_channels.xml',
+        'data/sequence.xml',
         'views/res_partner.xml',
         'views/res_partner_category.xml',
         'views/res_users.xml',
@@ -35,16 +37,16 @@
         'views/stock_picking.xml',
         'views/sale_order_line.xml',
         'views/sale_order.xml',
-        'views/seller_commission.xml',
         'views/commission_payment.xml',
-        # 'views/sale_commission_settlement_view.xml',
+        'views/seller_commission.xml',
         'views/test.xml',
         'report/report.xml',
         'report/report_sale_order_other.xml',
+        'report/payment_receipt_pdf.xml',
         'wizard/reassing_customer.xml',
-        'wizard/account_payment_register.xml',
+        # 'wizard/account_payment_register.xml',
         'wizard/wizard_commission_payment.xml',
-        'security/ir.model.access.csv',
+
     ],
     # only loaded in demonstration mode
 }

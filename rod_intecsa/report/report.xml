@@ -10,4 +10,16 @@
 <!--        <field name="paperformat_id" ref="rod_cooperativa_aportes.paperformat_certificate" />-->
         <field name="binding_type">report</field>
     </record>
+    <record id="action_report_pdf_sale_order_other" model="ir.actions.report">
+        <field name="name">Recibo de pago</field>
+        <field name="model">commission.payment</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">rod_intecsa.payment_receipt_pdf_id</field>
+        <field name="report_file">rod_intecsa.payment_receipt_pdf_id</field>
+        <field name="binding_model_id" ref="rod_intecsa.model_commission_payment"/>
+<!--        <field name="paperformat_id" ref="rod_cooperativa_aportes.paperformat_certificate" />-->
+        <field name="binding_type">report</field>
+    </record>
 </odoo>
+
+

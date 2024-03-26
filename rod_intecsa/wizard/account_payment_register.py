@@ -17,6 +17,10 @@ class AccountPaymentRegister(models.TransientModel):
             create_payment = self.env['seller.commission'].create({
                 'agent_id': sale.user_id.id,
                 'sale_id': sale.id,
+                'amount_untaxed': sale.amount_untaxed,
+                'amount_tax': sale.amount_tax,
+                'amount_total': sale.amount_total,
+                'discount_total': sale.discount_total,
                 'total': self.total_commission,
                 'date_from': datetime.today(),
                 'state': 'draft',

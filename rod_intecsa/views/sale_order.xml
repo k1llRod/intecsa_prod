@@ -8,6 +8,16 @@
                 <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="after">
                     <field name="sum_cost" optional="hide"/>
                 </xpath>
+                <xpath expr="//header/button[@name='action_draft']" position="after">
+                    <button name="action_create_payment" string="Registrar comision" class="oe_highlight" type="object" attrs="{'invisible': [('payment_comision','=',True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="payment_comision" invisible="1"/>
+                </xpath>
+                <xpath expr="//sheet/div[@name='button_box']" position="after">
+                    <widget name="web_ribbon" text="Pagado" attrs="{'invisible': [('payment_comision','!=',True)]}"/>
+                </xpath>
+
             </field>
         </record>
 <!--        <record model="ir.ui.view" id="view_res_partner_filter_inh">-->

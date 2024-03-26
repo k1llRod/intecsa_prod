@@ -9,6 +9,8 @@
                         <group string="Pagar comision">
                             <field name="user_id" readonly="1"/>
                             <field name="total_commission" readonly="1"/>
+                            <field name="date_from"/>
+                            <field name="date_to" required="1"/>
                             <field name="seller_ids" widget="many2many_tags"/>
                         </group>
                     </group>
