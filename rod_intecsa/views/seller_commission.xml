@@ -39,6 +39,7 @@
             id="menu_seller_commission"
             parent="sale.sale_menu_root"
             sequence="100"
+            groups="sales_team.group_sale_manager"
     />
     <menuitem
             id="menu_seller_commission_tree"

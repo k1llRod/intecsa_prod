@@ -11,10 +11,14 @@ class SaleOrder(models.Model):
     def action_create_payment(self):
         for rec in self:
             rec.payment_comision = True
-            create_payment = rec.env['seller.commission'].create({
+            create_payment = self.env['seller.commission'].create({
                 'agent_id': rec.user_id.id,
                 'sale_id': rec.id,
-                'total': rec.commission_total,
+                'amount_untaxed': rec.amount_untaxed,
+                'amount_tax': rec.amount_tax,
+                'amount_total': rec.amount_total,
+                'discount_total': rec.discount_total,
+                'total': self.commission_total,
                 'date_from': datetime.today(),
                 'state': 'draft',
             })
